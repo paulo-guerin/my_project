@@ -44,5 +44,19 @@
             return new Response($id);
         }
 
+        /**
+         * @Route("/toto", name="home_toto")
+         */
+        public function toto(){
+            return $this->redirectToRoute('home_index');
+        }
+
+        /**
+         * @Route("/twigtest", name="home_twigtest")
+         */
+        public function twigtest(){
+            $textPerso = "Salut je suis ta variable";
+            return $this->render("test.html.twig", ["variableArticleTwig"=> $textPerso]);
+        }
+
     }
-?>
