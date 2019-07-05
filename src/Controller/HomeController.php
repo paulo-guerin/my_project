@@ -56,7 +56,31 @@
          */
         public function twigtest(){
             $textPerso = "Salut je suis ta variable";
-            return $this->render("test.html.twig", ["variableArticleTwig"=> $textPerso]);
+            return $this->render("test.html.twig", [
+                "variableArticleTwig"=> $textPerso
+                ]
+            );
         }
 
+        /**
+         * @Route("/twigvariables", name="home_twigvarables")
+         */
+        public function twigvariables(){
+            $stringvariable="Voila ton string";
+            $booleenexo=false;
+            return $this->render("twigvariables.html.twig", ["stringvariable"=>$stringvariable, "booleenexo"=>$booleenexo]);
+        }
+
+        /**
+         * @Route("/twiglooparray", name="home_twiglooparray")
+         */
+        public function twiglooparray(){
+            $arrayducul=[
+                "salut",
+                "TVA",
+                "bien?"
+            ];
+            return $this->render("twiglooparray.html.twig", ["arrayducul"=>$arrayducul]);
+        }
     }
+
